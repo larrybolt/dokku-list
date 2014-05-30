@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+
+case "$1" in
+  list)
+    echo "     Current deployed apps:"
+    for app in $(ls -d $DOKKU_ROOT/*/); do
+      APP=$(basename $app);
+      echo "    * $app"
+    done
+    ;;
+
+  help)
+    cat && cat<<EOF
+    list                                            List deployed apps
+EOF
+  ;;
+
+esac
