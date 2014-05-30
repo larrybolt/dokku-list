@@ -14,4 +14,5 @@ Installation
 ```
 cd /var/lib/dokku/plugins
 git clone https://github.com/larrybolt/dokku-list list
+dokku plugins-install
 ```
