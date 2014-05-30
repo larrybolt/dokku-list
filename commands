@@ -4,7 +4,7 @@ set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 case "$1" in
   list)
     echo "     Current deployed apps:"
-    for app in $(ls -d $DOKKU_ROOT/*/); do
+    for app in $(ls ${DOKKU_ROOT}/*/CONTAINER 2>/dev/null | sed "s|^${DOKKU_ROOT}/\(.*\)/CONTAINER$|\1|"); do
       echo "     * $app"
     done
     ;;
