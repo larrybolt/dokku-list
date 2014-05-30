@@ -5,8 +5,7 @@ case "$1" in
   list)
     echo "     Current deployed apps:"
     for app in $(ls -d $DOKKU_ROOT/*/); do
-      APP=$(basename $app);
-      echo "    * $app"
+      echo "     * $app"
     done
     ;;
 
