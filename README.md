@@ -6,7 +6,7 @@ Commands
 --------
 ```
 $ dokku help
-     list              Rebuilds all apps
+     list              List deployed apps
 ```
 
 Installation
